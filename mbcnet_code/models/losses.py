@@ -36,6 +36,7 @@ class TripletLoss(nn.Module):
             raise ValueError(f"Unknown mode: {self.mode}")
 
     def _batch_hard(self, embeddings, labels):
+        # 
         """Batch hard triplet loss"""
         dist_matrix = pairwise_distance(embeddings)
         labels = labels.unsqueeze(1)
